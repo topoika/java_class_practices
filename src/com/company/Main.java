@@ -8,13 +8,14 @@ public class Main {
     public static void main(String[] args) {
         DataTypesFunctions _functions =new DataTypesFunctions();
         ControllStructures _controlStructures = new ControllStructures();
+        MiniProject _miniProject = new MiniProject();
 
         Scanner _newScanner = new Scanner(System.in);
-
-        System.out.print("Enter the Amount in your Mpesa: \n");
-    int a;
-    a = _newScanner.nextInt();
-        _controlStructures.getValue(a);
+        _miniProject.mainfuntion();
+//        System.out.print("Enter the marks for this unit: \n");
+//        int a;
+//        a = _newScanner.nextInt();
+//        _controlStructures.getGrade(a);
     }
 }
 
@@ -94,10 +95,25 @@ class  ControllStructures{
         }
     }
     void getValue(int amount){
-        if(amount>200){
+        if(amount>=200){
             System.out.println("High");
         }else {
             System.out.println("Low");
+        }
+    }
+    void getGrade(int marks){
+        if(marks>=90&& !(marks >100)){
+            System.out.println("Grade : A");
+        }else  if(marks>=70 && marks<90 ){
+            System.out.println("Grade : A-");
+        }else  if(marks>=50 && marks<70 ){
+            System.out.println("Grade : B+");
+        }else  if(marks>=40 && marks<50 ){
+            System.out.println("Grade : B+");
+        }else  if(marks<40 ){
+            System.out.println("Grade : F");
+        }else {
+            System.out.println("Invalid marks");
         }
     }
 }
