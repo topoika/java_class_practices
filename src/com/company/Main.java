@@ -6,18 +6,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-   Functions _functions =new Functions();
+        DataTypesFunctions _functions =new DataTypesFunctions();
+        ControllStructures _controlStructures = new ControllStructures();
 
         Scanner _newScanner = new Scanner(System.in);
 
-        System.out.print("Enter the number: \n");
+        System.out.print("Enter the Amount in your Mpesa: \n");
     int a;
     a = _newScanner.nextInt();
-    _functions.checkValue(a);
+        _controlStructures.getValue(a);
     }
 }
 
-class Functions{
+class DataTypesFunctions{
+
+
     Scanner _myInput = new Scanner(System.in);
     void getCapitalizedWord(String name){
         char firstLetter;
@@ -41,7 +44,6 @@ class Functions{
             System.out.print("Hint: The correct password has " + _systemPassword.length() + " number os characters\n and the starting letter is " + _systemPassword.charAt(0));
         }
     }
-
     Boolean getBool(String _string){
         String _true = "1";
        if(_true.compareTo(_string) == 0){
@@ -62,7 +64,40 @@ class Functions{
         }
     }
 
+    void usingLoops(){
+        for(int a = 0;a<5;a +=1){
+            System.out.println(a);
+        }
+    }
+    void userContitionalOperator(){
+        int a = 3;
+        int b=5;
+        if(!(a>b)){
+            System.out.println("A is greater thab B");
+        }else{
+            System.out.println("A is not greater than B");
+        }
+    }
 
 
 }
 
+class  ControllStructures{
+    void usingIfStatements(){
+        int year_of_study = 2;
+        double discount;
+        if(year_of_study ==1){
+            discount = 0.05*50000;
+            System.out.println("The discount is KSH " + discount);
+        }else {
+            System.out.println("You're not eligible for a discout");
+        }
+    }
+    void getValue(int amount){
+        if(amount>200){
+            System.out.println("High");
+        }else {
+            System.out.println("Low");
+        }
+    }
+}
