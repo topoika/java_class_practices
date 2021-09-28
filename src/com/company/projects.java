@@ -40,11 +40,12 @@ class MiniProject{
         printPaySlip();
     }
 
+
     void printPaySlip(){
         System.out.println("==================September Payslip================");
         System.out.println("=============**" + "For " + _employee.employee_name + " **=================");
         System.out.println("Name: " +_employee.employee_name);
-        System.out.println("Empl0yer name: " +_employee.employer_name);
+        System.out.println("Employer name: " +_employee.employer_name);
         System.out.println("Gross pay: KSH " +_employee.gross_salary);
         System.out.println("===Deductions");
         System.out.println("Tax: KSH " +_employee.tax);
