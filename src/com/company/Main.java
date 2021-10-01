@@ -11,7 +11,8 @@ public class Main {
         MiniProject _miniProject = new MiniProject();
 
         Scanner _newScanner = new Scanner(System.in);
-        _miniProject.mainfuntion();
+        _functions.getdulicates();
+//        _miniProject.mainfuntion();
 //        System.out.print("Enter the marks for this unit: \n");
 //        int a;
 //        a = _newScanner.nextInt();
@@ -80,6 +81,28 @@ class DataTypesFunctions{
         }
     }
 
+
+    void getdulicates(){
+        Scanner myInput = new Scanner(System.in);
+        String letters;
+        System.out.println("enter the letters");
+        letters = myInput.next();
+        int n = letters.length();
+        int y=0;
+        for (int i = 0 ; i < n ; i++) {
+            for (int j=i+1;j<n;j++ ){
+                if (letters.charAt(i ) == letters.charAt(j )) {
+                    y=y+1;
+                }
+            }
+        }
+        if(y>0){
+            System.out.println("Have Duplicates");
+        }
+        else {
+            System.out.println("unique String");
+        }
+    }
 
 }
 

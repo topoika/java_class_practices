@@ -1,10 +1,12 @@
 package com.company;
 
+import java.util.Date;
 import java.util.Scanner;
 
 class MiniProject{
     Employee _employee = new Employee();
     Scanner _myScanner = new Scanner(System.in);
+    Date _date =new Date();
     void mainfuntion(){
         getDetails();
     }
@@ -16,7 +18,9 @@ class MiniProject{
         System.out.println("Enter your salary: \n");
         _employee.gross_salary =  (double) _myScanner.nextInt();
         getTax((int) _employee.gross_salary);
-        getNhif((int)_employee.gross_salary);
+        get_nhif((int)_employee.gross_salary);
+        getCategory((int)_employee.gross_salary);
+
     }
     void getTax(int salary){
         if(salary>100000){
@@ -31,7 +35,42 @@ class MiniProject{
             _employee.tax = (double) salary  * 0.05;
         }
     }
-    void getNhif(int salary){
+
+    void getCategory(int salary){
+        if(salary>100000){
+            _employee.category=1;
+        }else if(salary>=80000 && salary<=100000){
+            _employee.category=2;
+        }else if(salary>=50000 && salary<80000){
+            _employee.category=3;
+        }else if(salary>=20000 && salary<50000){
+            _employee.category=4;
+        }else{
+            _employee.category=5;
+        }
+        _getTax(_employee.category);
+    }
+
+    void _getTax(int category){
+        switch (category){
+            case 1:
+                System.out.println("Bazuu");
+                break;
+            case 2:
+                System.out.println("Bazuu kido");
+                break;
+            case 3:
+                System.out.println("Bazuu kidogo");
+                break;
+            case 4:
+                System.out.println("Bazuu kidogo tu");
+                break;
+            case 5:
+                System.out.println("Bazuu kidogo sana");
+                break;
+        }
+    }
+    void get_nhif(int salary){
        if(salary>20000){
            _employee.nhif = 1300.0;
        }else {
@@ -65,6 +104,7 @@ class Employee{
     double gross_salary;
     double tax;
     double nhif;
+    int category;
     double nssf= 500.0;
 
 }
