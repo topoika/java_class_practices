@@ -1,5 +1,7 @@
 package com.company;
 
+import java.awt.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -9,20 +11,15 @@ public class Main {
         DataTypesFunctions _functions =new DataTypesFunctions();
         ControllStructures _controlStructures = new ControllStructures();
         MiniProject _miniProject = new MiniProject();
+        WeekArrays _arrays = new WeekArrays();
 
         Scanner _newScanner = new Scanner(System.in);
-        _functions.getdulicates();
-//        _miniProject.mainfuntion();
-//        System.out.print("Enter the marks for this unit: \n");
-//        int a;
-//        a = _newScanner.nextInt();
-//        _controlStructures.getGrade(a);
+        _arrays.getScores();
+//        _functions.dataStructuresAndAll();
     }
 }
 
 class DataTypesFunctions{
-
-
     Scanner _myInput = new Scanner(System.in);
     void getCapitalizedWord(String name){
         char firstLetter;
@@ -54,7 +51,6 @@ class DataTypesFunctions{
            return  false;
        }
     }
-
     void checkValue(int a){
         int c = a%13;
         System.out.println(  Math.random());
@@ -65,10 +61,34 @@ class DataTypesFunctions{
             System.out.print(a +" isn't divisible by 13");
         }
     }
-
-    void usingLoops(){
-        for(int a = 0;a<5;a +=1){
+    void usingForLoops(){
+        for(int a = 9;a<=100;a +=9){
+            if (a==54){
+                continue;
+            }
             System.out.println(a);
+        }
+    }
+
+    void dataStructuresAndAll(){
+        int[] a = {4,2,5,4};
+        for (int i = 0;i<=a.length;i++){
+            for (int j=i++;j<=a.length-1;j++){
+                if(a[i]+a[j]==8){
+                    System.out.print("I have them");
+                }else{
+                    System.out.print("No can do");
+                }
+                System.out.print(a[j]);
+            }
+            System.out.print(a[i]);
+        }
+    }
+    void usingWhileLoops(){
+        int i = 20;
+        while (i<=50){
+            System.out.println(i);
+            i+=2;
         }
     }
     void userContitionalOperator(){
@@ -80,8 +100,6 @@ class DataTypesFunctions{
             System.out.println("A is not greater than B");
         }
     }
-
-
     void getdulicates(){
         Scanner myInput = new Scanner(System.in);
         String letters;
@@ -103,9 +121,7 @@ class DataTypesFunctions{
             System.out.println("unique String");
         }
     }
-
 }
-
 class  ControllStructures{
     void usingIfStatements(){
         int year_of_study = 2;
@@ -138,5 +154,52 @@ class  ControllStructures{
         }else {
             System.out.println("Invalid marks");
         }
+    }
+}
+
+class WeekArrays{
+
+
+    Scanner _scanner = new Scanner(System.in);
+    void getNumber(){
+        int a;
+        System.out.println("Enter the number of products");
+        a= _scanner.nextInt();
+        String[] _proucts = new String[a];
+        for (int i = 0;i<_proucts.length;i++){
+            System.out.print("Enter the name of product number " + (i+1) + " ");
+            _proucts[i] = _scanner.next();
+        }
+        for (int i=0;i<_proucts.length;i++){
+            System.out.println(_proucts[i]);
+        }
+    }
+    void getScores(){
+        int classSize;
+        System.out.println("Enter the number of student");
+        classSize= _scanner.nextInt();
+
+        int[] _scores = new int[classSize];
+        int sum = 0;
+        System.out.println("Enter the scores for " + classSize + " Students");
+        for (int i = 0;i<_scores.length;i++){
+            System.out.print("Enter the score for student number " + (i+1) + " ");
+            _scores[i] = _scanner.nextInt();
+            sum=sum+_scores[i];
+        }
+        double avarage =(double) sum/classSize;
+        int max= _scores[0];
+        int min = _scores[0];
+        for (int i=0;i<classSize;i++){
+            if(_scores[i]>max){
+                max=_scores[i];
+            }
+            if (_scores[i]<min){
+                min=_scores[i];
+            }
+        }
+        System.out.println("Avarage = "+avarage);
+        System.out.println("Max = "+max);
+        System.out.println("Min = "+min);
     }
 }
