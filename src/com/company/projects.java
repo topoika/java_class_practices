@@ -20,7 +20,6 @@ class MiniProject{
         getTax((int) _employee.gross_salary);
         get_nhif((int)_employee.gross_salary);
         getCategory((int)_employee.gross_salary);
-
     }
     void getTax(int salary){
         if(salary>100000){

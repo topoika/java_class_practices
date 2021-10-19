@@ -1,21 +1,24 @@
 package com.company;
 
-import java.awt.*;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class Main {
 
     public static void main(String[] args) {
+        /////OBJECT INIT////
         DataTypesFunctions _functions =new DataTypesFunctions();
         ControllStructures _controlStructures = new ControllStructures();
         MiniProject _miniProject = new MiniProject();
         WeekArrays _arrays = new WeekArrays();
-
+        UsingMethods _methods = new UsingMethods();
         Scanner _newScanner = new Scanner(System.in);
-        _arrays.getScores();
-//        _functions.dataStructuresAndAll();
+        ////OPERATION///
+        String _userPassword;
+        System.out.print("Enter your password ");
+        _userPassword = _newScanner.next();
+        System.out.println(_methods.checkPassword(_userPassword));
+
     }
 }
 
@@ -158,8 +161,6 @@ class  ControllStructures{
 }
 
 class WeekArrays{
-
-
     Scanner _scanner = new Scanner(System.in);
     void getNumber(){
         int a;
@@ -201,5 +202,27 @@ class WeekArrays{
         System.out.println("Avarage = "+avarage);
         System.out.println("Max = "+max);
         System.out.println("Min = "+min);
+    }
+    void getPattern(){
+        int i, j, rows;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of rows you want to print: ");
+        rows = sc.nextInt();
+        for (i= 0; i<= rows-1; i++)
+        {
+            for (j=0; j<=i; j++)
+            {
+                System.out.print("*"+ " ");
+            }
+            System.out.println("");
+        }
+        for (i=rows-1; i>=0; i--)
+        {
+            for(j=0; j <= i-1;j++)
+            {
+                System.out.print("*"+ " ");
+            }
+            System.out.println("");
+        }
     }
 }
