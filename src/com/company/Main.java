@@ -7,31 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
         /////OBJECT INIT////
-        DataTypesFunctions _functions = new DataTypesFunctions();
-        ControllStructures _controlStructures = new ControllStructures();
-        MiniProject _miniProject = new MiniProject();
-        WeekArrays _arrays = new WeekArrays();
-        UsingMethods _methods = new UsingMethods();
-        Scanner _newScanner = new Scanner(System.in);
-
-
-
+//        DataTypesFunctions _functions = new DataTypesFunctions();
+//        ControllStructures _controlStructures = new ControllStructures();
+//        MiniProject _miniProject = new MiniProject();
+//        WeekArrays _arrays = new WeekArrays();
+//        UsingMethods _methods = new UsingMethods();
+//        Scanner _newScanner = new Scanner(System.in);
 
 
         ////OPERATION///
-//        System.out.println("The area of a square is : "+_methods.getArea(10));
-//        System.out.println("The area of a rectangle is : "+_methods.getArea(10,5));
-//        int number;
-//        System.out.println("Enter the number to be checked ");
-//        number=_newScanner.nextInt();
-//        System.out.println(_methods.checkNumber(number));
-
-
-        /////OLD CODE////
-        int _userPassword;
-        System.out.print("Enter your password ");
-        _userPassword = _newScanner.nextInt();
-        System.out.println(_methods.authentication(_userPassword));
+        Student _studentA = new Student();
+        _studentA.getData("David", "Tampul", 20, "20-1041");
+        _studentA.displyData();
     }
 }
 
@@ -240,11 +227,11 @@ class WeekArrays {
             }
             System.out.println("");
         }
-        for (i = rows - 1; i >= 0; i--) {
-            for (j = 0; j <= i - 1; j++) {
-                System.out.print("*" + " ");
-            }
-            System.out.println("");
-        }
+//        for (i = rows - 1; i >= 0; i--) {
+//            for (j = 0; j <= i - 1; j++) {
+//                System.out.print("*" + " ");
+//            }
+//            System.out.println("");
+//        }
     }
 }
