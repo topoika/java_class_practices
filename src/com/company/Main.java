@@ -17,8 +17,9 @@ public class Main {
 
         ////OPERATION///
         Student _studentA = new Student();
-        _studentA.getData("David", "Tampul", 20, "20-1041");
-        _studentA.displyData();
+        Car _car1= new Car();
+        _car1.getData("Red","Toyote","Vanguard",2013,1600000.00);
+        _car1.displayData();
     }
 }
 
@@ -132,7 +133,6 @@ class DataTypesFunctions {
         }
     }
 }
-
 class ControllStructures {
     void usingIfStatements() {
         int year_of_study = 2;
@@ -169,7 +169,6 @@ class ControllStructures {
         }
     }
 }
-
 class WeekArrays {
     Scanner _scanner = new Scanner(System.in);
 
@@ -235,3 +234,7 @@ class WeekArrays {
 //        }
     }
 }
+
+
+/*Define your own class called CAR it should recieve a car's model, color, year of manufacture, prices of the car,
+define methods to recieve the data and diplay the data*/
