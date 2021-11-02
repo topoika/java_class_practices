@@ -21,3 +21,23 @@ public class Student {
         System.out.println("Admission Number: " + admissionNumber);
     }
 }
+
+
+class CompaireNumbers {
+    int a;
+    int b;
+
+    CompaireNumbers(int one, int two) {
+        a = one;
+        b = two;
+    }
+
+    int getGreater() {
+        if (a > b) {
+            return a;
+
+        } else {
+            return b;
+        }
+    }
+}

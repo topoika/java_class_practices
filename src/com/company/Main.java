@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
+        Scanner _input =  new Scanner(System.in);
         /////OBJECT INIT////
 //        DataTypesFunctions _functions = new DataTypesFunctions();
 //        ControllStructures _controlStructures = new ControllStructures();
@@ -16,10 +18,13 @@ public class Main {
 
 
         ////OPERATION///
-        Student _studentA = new Student();
-        Car _car1= new Car();
-        _car1.getData("Red","Toyote","Vanguard",2013,1600000.00);
-        _car1.displayData();
+        int num1,num2;
+        System.out.print("Enter two numbers to compaire\nNumber one: ");
+        num1 = _input.nextInt();
+        System.out.print("Number two: ");
+        num2 = _input.nextInt();
+        CompaireNumbers _numbers = new CompaireNumbers(num1,num2);
+        System.out.print("The greatest number is "+ _numbers.getGreater());
     }
 }
 
@@ -238,3 +243,11 @@ class WeekArrays {
 
 /*Define your own class called CAR it should recieve a car's model, color, year of manufacture, prices of the car,
 define methods to recieve the data and diplay the data*/
+
+
+
+/* 1>Define a constructor ==== "a constractor is a special function to a class that is used to initialize the state of the class
+2. state any three properties of a constructors ====1> a constractor has no return type  2> a constractor shares a name to the class name and start with a capital letter unlike other functions 3> when it is provoked or called it is preceeded by the "new" keyword
+3> write a programe that recieves two intergers in it's constructors and uses a function defined in it to determine which of the two numbers is greater
+the greaters number is return to the main funcion note: the two numbers are recieved at runtime///
+ */
