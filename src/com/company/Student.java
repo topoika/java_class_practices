@@ -1,6 +1,9 @@
 package com.company;
 
 
+import java.util.List;
+import java.util.Scanner;
+
 public class Student {
     String firstName;
     String lastName;
@@ -21,23 +24,41 @@ public class Student {
         System.out.println("Admission Number: " + admissionNumber);
     }
 }
-
-
+///////USING CONSTRACTORS ////
 class CompaireNumbers {
     int a;
     int b;
-
-    CompaireNumbers(int one, int two) {
-        a = one;
-        b = two;
+    public CompaireNumbers(int a, int b) {
+        this.a = a;
+        this.b = b;
     }
 
     int getGreater() {
-        if (a > b) {
-            return a;
+        return a > b ? a : b;
 
-        } else {
-            return b;
-        }
+    }
+}
+
+class Product{
+    String name;
+    double price;
+    int quantity;
+    String serial_no;
+    Product getDetails(Product _product, Scanner _input){
+        System.out.print("Enter the product details\nName: ");
+        _product.name = _input.next();
+        System.out.print("Price: ");
+        _product.price = _input.nextInt();
+        System.out.print("Quantiry: ");
+        _product.price = _input.nextInt();
+        _product.serial_no = "S"+ String.valueOf(Math.random()).substring(2,8);
+        displayDetials(_product);
+        return  _product;
+    }
+    void displayDetials(Product _product){
+        System.out.println("Id: "+_product.serial_no);
+        System.out.println("Name: "+_product.name);
+        System.out.println("Price: Kshs "+_product.price);
+        System.out.println("Quantity: "+_product.quantity);
     }
 }

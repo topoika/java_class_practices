@@ -1,13 +1,17 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Main {
-
+    static Scanner _input = new Scanner(System.in);
+    static Product _product = new Product();
+    static ArrayList<Product> products = new ArrayList<Product>();
 
     public static void main(String[] args) {
-        Scanner _input =  new Scanner(System.in);
+
+
         /////OBJECT INIT////
 //        DataTypesFunctions _functions = new DataTypesFunctions();
 //        ControllStructures _controlStructures = new ControllStructures();
@@ -18,13 +22,20 @@ public class Main {
 
 
         ////OPERATION///
-        int num1,num2;
-        System.out.print("Enter two numbers to compaire\nNumber one: ");
-        num1 = _input.nextInt();
-        System.out.print("Number two: ");
-        num2 = _input.nextInt();
-        CompaireNumbers _numbers = new CompaireNumbers(num1,num2);
-        System.out.print("The greatest number is "+ _numbers.getGreater());
+        getProducts();
+
+
+    }
+
+    static void getProducts() {
+        if (products.size() != 4) {
+            products.add(_product.getDetails(_product, _input));
+            System.out.println("We need more");
+            getProducts();
+        } else {
+            System.out.println("The list is full");
+            System.out.println(products.get(3).name);
+        }
     }
 }
 
@@ -138,6 +149,7 @@ class DataTypesFunctions {
         }
     }
 }
+
 class ControllStructures {
     void usingIfStatements() {
         int year_of_study = 2;
@@ -174,6 +186,7 @@ class ControllStructures {
         }
     }
 }
+
 class WeekArrays {
     Scanner _scanner = new Scanner(System.in);
 
@@ -243,11 +256,16 @@ class WeekArrays {
 
 /*Define your own class called CAR it should recieve a car's model, color, year of manufacture, prices of the car,
 define methods to recieve the data and diplay the data*/
-
-
-
-/* 1>Define a constructor ==== "a constractor is a special function to a class that is used to initialize the state of the class
-2. state any three properties of a constructors ====1> a constractor has no return type  2> a constractor shares a name to the class name and start with a capital letter unlike other functions 3> when it is provoked or called it is preceeded by the "new" keyword
+/* ========QUESTIONS==========
+1>Define a constructor ====
+    "a constractor is a special function to a class that is used to initialize the state of the class
+2. state any three properties of a constructors ====
+        1> a constractor has no return type
+        2> a constractor shares a name to the class name and start with a capital letter unlike other functions
+        3> when it is provoked or called it is preceeded by the "new" keyword
 3> write a programe that recieves two intergers in it's constructors and uses a function defined in it to determine which of the two numbers is greater
-the greaters number is return to the main funcion note: the two numbers are recieved at runtime///
+  the greaters number is return to the main funcion note: the two numbers are recieved at runtime///
+/////ANSWER IS IS THE Compairnumbers class on the program//////
+4. Write a programm that recieves the number of products for each product recieve product name and price, compute the total cost of all the products and allow a discount of 5% if the total
+is more than 5k else allow a discount of 1%. Propare an output screen that looks like a reciept with all the products and the prices, disount allowed and amount paid.
  */
