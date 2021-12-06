@@ -16,13 +16,13 @@ public class Main {
 //        DataTypesFunctions _functions = new DataTypesFunctions();
 //        ControllStructures _controlStructures = new ControllStructures();
 //        MiniProject _miniProject = new MiniProject();
-//        WeekArrays _arrays = new WeekArrays();
+        WeekArrays _arrays = new WeekArrays();
+        _arrays.getPattern();
 //        UsingMethods _methods = new UsingMethods();
 //        Scanner _newScanner = new Scanner(System.in);
 
 
         ////OPERATION///
-        getProducts();
 
 
     }
@@ -244,13 +244,25 @@ class WeekArrays {
             }
             System.out.println("");
         }
-//        for (i = rows - 1; i >= 0; i--) {
-//            for (j = 0; j <= i - 1; j++) {
-//                System.out.print("*" + " ");
-//            }
-//            System.out.println("");
-//        }
+        for (i = rows - 1; i >= 0; i--) {
+            for (j = 0; j <= i - 1; j++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println("");
+        }
+
+
+        for (i = 0; i < rows; i++) {
+            for (j = rows - i; j > 1; j--) {
+                System.out.print(" ");
+            }
+            for (j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
+
 }
 
 
